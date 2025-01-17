@@ -1,0 +1,41 @@
+.home-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    height: 300px;
+    color: white;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+  }
+  
+  .home-content h2 {
+    padding-left: 70px;
+    padding-top: 10px;
+    margin: 0; /* Remove any default margin */
+  }
+  
+  .home-content h1 {
+    padding-left: 60px;
+    /* padding: 5px; */
+    margin: 0; /* Remove any default margin */
+    /* padding-bottom: 20px; Add a small gap below h2 */
+  }
+  
+  .home-buttons {
+    margin-left: 90px;
+    display: flex; /* Make the buttons line up horizontally */
+    
+    margin-top: 50px; /* Small gap between text and buttons */
+  }
+  
+  .home-buttons .btn-hire {
+    background-color: #3b8ff3;
+    color: white;
+    width: 150px;
+  }
+  
+  .home-buttons .btn-cv {
+    background-color: #f29f67;
+    color: white;
+    margin-left: 15px;
+  }
+  

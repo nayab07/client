@@ -1,0 +1,79 @@
+/* About section container */
+.about-container {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    margin-left: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9; /* Light background */
+    min-height: 500px;
+  }
+  
+  /* Flex container for the content and image */
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Text content styling */
+  .about-text {
+    flex: 1; /* Takes up the remaining space */
+    margin-right: 20px; /* Add some space between text and image */
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Profile image styling */
+  .about-image img {
+    width: 200px; /* Set the size of the image */
+    height: 200px;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensures the image covers the circle */
+    border: 4px solid #3498db; /* Optional border around the profile image */
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+    
+    .about-content {
+      flex-direction: column; /* Stack the content and image vertically on smaller screens */
+      align-items: center;
+    }
+  
+    .about-image img {
+      width: 150px; /* Adjust the image size */
+      height: 150px;
+    }
+  
+    .about-title {
+      font-size: 2rem;
+    }
+  
+    .about-description {
+      font-size: 1rem;
+    }
+  }
+  
