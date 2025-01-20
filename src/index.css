@@ -2,7 +2,75 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+  /* overflow-y: auto;  */
+  
 }
+html, body {
+  overflow-x: hidden;
+  margin: 0; /* Sometimes extra margin can cause overflow */
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* dark mode  */
+
+#dark body {
+  background-color: #181818;
+  color: #e0e0e0;
+}
+
+/* #dark a {
+  color: #bb86fc;
+}
+
+#dark a:hover {
+  color: #3700b3;
+  text-decoration: underline;
+}
+
+#dark header {
+  background-color: #121212;
+  border-bottom: 1px solid #333333;
+}
+
+#dark footer {
+  background-color: #121212;
+  color: #b0b0b0;
+}
+
+#dark .card {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  border: 1px solid #444444;
+}
+
+#dark .button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#dark .button:hover {
+  background-color: #3700b3;
+}
+
+#dark input, 
+#dark textarea, 
+#dark select {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #444444;
+}
+
+#dark input:focus, 
+#dark textarea:focus, 
+#dark select:focus {
+   border-color: #bb86fc;
+} */

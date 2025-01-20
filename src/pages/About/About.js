@@ -3,7 +3,7 @@ import './About.css'; // Import the external CSS file
 
 const About = () => {
   return (
-    <section className="about-container">
+    <section className="about-container"id='about'>
       <div className="about-content">
         <div className="about-text">
           <h2 className="about-title">About Me</h2>

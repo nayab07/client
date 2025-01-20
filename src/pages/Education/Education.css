@@ -1,0 +1,119 @@
+/* Education.css */
+
+/* General container for the Education section */
+.education-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .education-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  /* The timeline container */
+  .education-timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Vertical line in the timeline */
+  .education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ddd;
+    transform: translateX(-50%);
+  }
+  
+  /* Style for each timeline item */
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 40px; /* Space for the vertical line */
+  }
+  
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #3498db;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  /* Content for each timeline item */
+  .timeline-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left: 20px;
+    position: relative;
+    z-index: 0;
+  }
+  
+  /* Title of the degree or education */
+  .degree-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Institution name */
+  .institution {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* Year of education */
+  .year {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  
+  /* Description of the education experience */
+  .description {
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .education-title {
+      font-size: 2rem;
+    }
+  
+    .degree-title {
+      font-size: 1.4rem;
+    }
+  
+    .institution {
+      font-size: 1rem;
+    }
+  
+    .year {
+      font-size: 0.9rem;
+    }
+  
+    .education-timeline {
+      max-width: 100%;
+      padding-left: 10px;
+    }
+  }
+  

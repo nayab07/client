@@ -1,0 +1,119 @@
+/* Main container for the Contact Form */
+.contact-container {
+  padding-left: 200px; /* Adds left margin of 200px */
+  padding-top: 30px; /* Adds some space at the top */
+  padding-right: 20px; /* Adds some space on the right side */
+  padding-bottom: 30px; /* Adds some space at the bottom */
+  background: linear-gradient(135deg, #4B6A9B, #3e5670); /* Gradient background */
+  border-radius: 15px; /* Rounded corners for the entire section */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
+  max-width: 600px; /* Makes the form container more compact */
+  margin: 0 auto; /* Centers the form */
+  color: white; /* White text for better contrast */
+  padding: 20px; /* Padding inside the container */
+}
+
+/* Contact Form Title */
+.contact-container h2 {
+  font-size: 2rem; /* Smaller font size for the title */
+  text-align: center; /* Center the title */
+  color: #ffffff; /* White color for the title */
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow for emphasis */
+}
+
+/* Contact Form Description */
+.contact-container p {
+  font-size: 1rem; /* Adjusted font size */
+  text-align: center;
+  color: #ddd; /* Light gray color for description */
+  margin-bottom: 25px; /* Reduces space below the description */
+}
+
+/* Styling for the form */
+.contact-form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  gap: 15px; /* Reduced gap between each form element */
+  max-width: 100%; /* Makes sure the form takes up the full width */
+  margin: 0 auto; /* Centers the form */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the form */
+  border-radius: 8px; /* Rounded corners for the form */
+  padding: 15px; /* Reduced padding inside the form */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow around the form */
+}
+
+/* Form Label Styling */
+.contact-form label {
+  font-size: 0.95rem; /* Smaller font size */
+  font-weight: 600;
+  color: #333; /* Dark color for the labels */
+  margin-bottom: 5px; /* Adds a small gap below the label */
+  text-transform: uppercase; /* Capitalizes label text */
+}
+
+/* Form Input & Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px; /* Adjusted padding */
+  font-size: 1rem; /* Reduced font size */
+  border: 1px solid #ddd; /* Light border for the input fields */
+  border-radius: 6px; /* Rounded corners for input fields */
+  width: 100%; /* Ensures the input and textarea take up full width */
+  box-sizing: border-box; /* Prevents padding from expanding the size */
+  transition: all 0.3s ease; /* Smooth transition for focus and hover states */
+}
+
+/* Focused State for Input Fields */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4B6A9B; /* Change border color on focus */
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 5px rgba(75, 106, 155, 0.5); /* Adds a subtle shadow on focus */
+}
+
+/* Submit Button Styling */
+.submit-btn {
+  background-color: #4B6A9B; /* Primary color for the button */
+  color: white; /* White text */
+  padding: 10px 18px; /* Reduced padding for smaller button */
+  font-size: 1.1rem; /* Adjusted font size */
+  font-weight: 600;
+  border: none;
+  border-radius: 6px; /* Rounded corners for the button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 15px; /* Space above the button */
+  width: 100%; /* Makes the button span full width */
+}
+
+/* Submit Button Hover Effect */
+.submit-btn:hover {
+  background-color: #3e5670; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    padding-left: 20px; /* Adjust left padding for smaller screens */
+    padding-right: 20px; /* Ensure padding is on both sides for mobile */
+  }
+
+  .contact-form {
+    max-width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Smaller padding on mobile */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem; /* Smaller font size on mobile */
+  }
+
+  .submit-btn {
+    font-size: 1rem; /* Adjust button font size */
+  }
+}

@@ -1,39 +1,59 @@
-import { React } from "react";
-import Resume from '../../assets/docs/shams.pdf'
+import React from "react";
+import { useTheme } from "../../context/ThemeContext";
+import Typewriter from "typewriter-effect";
+import resume from "../../../src/assets/docs/shams.pdf"
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import "./Home.css";
-import TypeWriterEffect from "react-typewriter-effect";
+// import Fade from "react-reveal/Fade";
 
 const Home = () => {
+  const [theme, setTheme] = useTheme();
+  //handle theme
+  const handleTheme = () => {
+    setTheme((prevState) => (prevState === "light" ? "dark" : "light"));
+  };
   return (
     <>
-      <div className="container-fluid home-container">
+      <div className="container-fluid home-container" id="home">
+        <div className="theme-btn" onClick={handleTheme}>
+          {theme === "light" ? (
+            <BsFillMoonStarsFill size={30} />
+          ) : (
+            <BsFillSunFill size={30} />
+          )}
+        </div>
         <div className="container home-content">
-          <h2>Hi 👋 I'm a</h2>
-          <h1>
-            <div style={{ marginBottom: "30px" }}>
-              <TypeWriterEffect
-                textStyle={{
-                  fontFamily: "Red Hat Display",
-                  color: "#e0b50f",
-                  fontWeight: 100,
-                  fontSize: "1em",
+          {/* <Fade right> */}
+            <h2>Hi 👋 I'm a</h2>
+            <h1>
+              <Typewriter
+                options={{
+                  strings: [
+                    "FullStack Developer!",
+                    "Mern Stack Developer!",
+                    "React native developer!",
+                  ],
+                  autoStart: true,
+                  loop: true,
                 }}
-                startDelay={2000}
-                cursorColor="#3F3D56"
-                multiText={[
-                  "Mern Stack Developer!",
-                  "Full Stack Developer!",
-                  "React Developer!",
-                ]}
-                multiTextDelay={1000}
-                typeSpeed={30}
               />
+            </h1>
+          {/* </Fade> */}
+          {/* <Fade bottom> */}
+            <div className="home-buttons">
+              <a
+                className="btn btn-hire"
+                href="https://api.whatsapp.com/send?phone=1234567890"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Hire Me
+              </a>
+              <a className="btn btn-cv" href={resume} download="your_name.pdf">
+                My Resume
+              </a>
             </div>
-          </h1>
-          <div className="home-buttons">
-            <button className="btn btn-hire">Hire Me</button>
-            <a className="btn btn-cv" href={Resume} download="shams.pdf">My Resume</a>
-            </div>
+          {/* </Fade> */}
         </div>
       </div>
     </>

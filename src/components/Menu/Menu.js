@@ -1,77 +1,205 @@
 import React from "react";
 import "./Menu.css";
-import { FaHome } from "react-icons/fa";
-import { FcAbout } from "react-icons/fc";
-import { FaLaptopCode } from "react-icons/fa6";
-import { MdOutlineDeveloperMode } from "react-icons/md";
-import { FaUserGraduate } from "react-icons/fa6";
-import { GrProjects } from "react-icons/gr";
-import { FaUser } from "react-icons/fa";
-import { GrContact } from "react-icons/gr";
-const Menu = ({ toggle }) => {
+// import Zoom from "react-reveal/Zoom";
+// import Fade from "react-reveal/Fade";
+import { Link } from "react-scroll";
+import {
+  FcAbout,
+  FcBiotech,
+  FcBusinessContact,
+  FcHome,
+  FcPortraitMode,
+  FcReadingEbook,
+  FcVideoProjector,
+} from "react-icons/fc";
+const Menus = ({ toggle }) => {
   return (
     <>
       {toggle ? (
         <>
-          <div className="navbar-profile-pic">
-            <img src="../IMG-20250116-WA0012[1].jpg" alt="progile_pic" />
-          </div>
-          <div className="nav-items">
-            <div className="nav-item">
-              <div className="nav-link">
-                <FaHome /> Home
-              </div>
-              <div className="nav-link">
-                <FcAbout /> About
-              </div>
-              <div className="nav-link">
-                <FaLaptopCode /> Work Experience
-              </div>
-              <div className="nav-link">
-                <MdOutlineDeveloperMode /> Tech Stack
-              </div>
-              <div className="nav-link">
-                <FaUserGraduate /> Education
-              </div>
-              <div className="nav-link">
-                <GrProjects /> Projects
-              </div>
-              <div className="nav-link">
-                <FaUser /> Testimonial
-              </div>
-              <div className="nav-link">
-                <GrContact /> Contact
+          
+            <div className="navbar-profile-pic">
+              <img
+                src="../IMG-20250116-WA0012[1].jpg"
+                alt="profile pic"
+              />
+            </div>
+          
+          {/* <Fade left> */}
+            <div className="nav-items">
+              <div className="nav-item">
+                <div className="nav-link">
+                  <Link
+                    to="home"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={100}
+                  >
+                    <FcHome />
+                    Home
+                  </Link>
+                </div>
+                <div className="nav-link">
+                  <Link
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={100}
+                  >
+                    <FcAbout />
+                    About
+                  </Link>
+                </div>
+                <div className="nav-link">
+                  <Link
+                    to="education"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={100}
+                  >
+                    <FcReadingEbook />
+                    Education
+                  </Link>
+                </div>
+
+                <div className="nav-link">
+                  <Link
+                    to="techstack"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={100}
+                  >
+                    <FcBiotech />
+                    Tech Stack
+                  </Link>
+                </div>
+
+                <div className="nav-link">
+                  <Link
+                    to="projects"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={100}
+                  >
+                    <FcVideoProjector />
+                    Projects
+                  </Link>
+                </div>
+                <div className="nav-link">
+                  <Link
+                    to="work"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={100}
+                  >
+                    <FcPortraitMode />
+                    Work Experince
+                  </Link>
+                </div>
+                <div className="nav-link">
+                  <Link
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={100}
+                  >
+                    <FcBusinessContact />
+                    Contact
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          {/* </Fade> */}
         </>
       ) : (
         <>
           <div className="nav-items">
             <div className="nav-item">
               <div className="nav-link">
-                <FaHome title="Home"/>
+                <Link
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
+                  <FcHome />
+                </Link>
               </div>
               <div className="nav-link">
-                <FcAbout title="About" />
+                <Link
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
+                  <FcAbout />
+                </Link>
               </div>
               <div className="nav-link">
-                <FaLaptopCode title="Work Experience" />
+                <Link
+                  to="education"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
+                  <FcReadingEbook />
+                </Link>
+              </div>
+
+              <div className="nav-link">
+                <Link
+                  to="techstack"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
+                  <FcBiotech />
+                </Link>
+              </div>
+
+              <div className="nav-link">
+                <Link
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
+                  <FcVideoProjector />
+                </Link>
               </div>
               <div className="nav-link">
-                <MdOutlineDeveloperMode title=" Tech Stack"/>
+                <Link
+                  to="work"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
+                  <FcPortraitMode />
+                </Link>
               </div>
               <div className="nav-link">
-                <FaUserGraduate title="Education" /> 
-              </div>
-              <div className="nav-link">
-                <GrProjects title="Projects" /> 
-              </div>
-              <div className="nav-link">
-                <FaUser title="Testimonial" />
-              </div>
-              <div className="nav-link">
-                <GrContact title="Contact" />
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={100}
+                >
+                  <FcBusinessContact />
+                </Link>
               </div>
             </div>
           </div>
@@ -81,4 +209,4 @@ const Menu = ({ toggle }) => {
   );
 };
 
-export default Menu;
+export default Menus;

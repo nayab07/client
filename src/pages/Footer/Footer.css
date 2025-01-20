@@ -1,0 +1,42 @@
+/* Global styles for the footer */
+.footer {
+    /* background-color: #333; */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .footer p {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    color:wheat;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .social-links a:hover {
+    color: #5a67d8;
+  }
+  
+  .social-links i {
+    margin-right: 8px;
+  }
+  
+  /* Font Awesome Icons: Ensure you've included FontAwesome CDN in your public index.html if not using npm package */
+  

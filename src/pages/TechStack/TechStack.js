@@ -3,7 +3,7 @@ import './TechStack.css'; // Importing external CSS for styling
 
 const TechStack = () => {
   return (
-    <section className="techstack-container">
+    <section className="techstack-container"id='techstack'>
       <h2 className="techstack-title">My Tech Stack</h2>
       <div className="techstack-content">
         {/* MongoDB */}
