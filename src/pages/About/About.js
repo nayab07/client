@@ -8,7 +8,7 @@ const About = () => {
         <div className="about-text">
           <h2 className="about-title">About Me</h2>
           <p className="about-description">
-            Hi, I'm [Your Name], a passionate web developer with expertise in creating interactive and dynamic web applications. 
+            Hi, I'm Nayab Shams, a passionate web developer with expertise in creating interactive and dynamic web applications. 
             I specialize in front-end technologies like React, HTML, CSS, and JavaScript, and I'm always eager to learn new skills and tools.
           </p>
           <p className="about-description">

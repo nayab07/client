@@ -1,73 +1,71 @@
-/* About section container */
+/* About.css */
+
+/* General Styles */
 .about-container {
   display: flex;
-  margin-left: 100px; 
-  padding: 40px;
-  background-color: #fafafa; /* Light background */
-  min-height: 400px; /* Adjust min-height to a more reasonable value */
   justify-content: center;
   align-items: center;
-  width: 100%; /* Full width */
-  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
-  overflow: auto; /* Allow scrolling if content overflows */
+  padding: 50px 20px;
+  background-color: var(--background-color);
 }
 
-/* Flex container for the content and image */
 .about-content {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  gap: 20px;
 }
 
-/* Text content styling */
 .about-text {
-  flex: 1; /* Takes up remaining space */
-  margin-right: 20px; /* Add space between text and image */
+  flex: 1;
+  text-align: left;
 }
 
 .about-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
   margin-bottom: 20px;
 }
 
 .about-description {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.2rem;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  color: var(--text-color);
 }
 
-/* Profile image styling */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border-radius: 90px;
+}
+
 .about-image img {
-  width: 200px; /* Set image size */
-  height: 200px;
-  border-radius: 50%; /* Make it circular */
-  object-fit: cover; /* Ensures the image covers the circle */
-  border: 4px solid #3498db; /* Optional border around the profile image */
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
 }
 
-/* Responsive styling for smaller screens */
+/* Media Queries for Mobile Responsiveness */
+
+/* For screens less than or equal to 768px (tablets and mobile devices) */
 @media (max-width: 768px) {
   .about-container {
-    padding: 20px;
+    padding: 40px 20px;
   }
 
   .about-content {
-    flex-direction: column; /* Stack content and image vertically */
+    flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 
-  .about-image img {
-    width: 150px; /* Adjust image size for mobile */
-    height: 150px;
+  .about-text {
+    text-align: center;
   }
 
   .about-title {
@@ -77,4 +75,35 @@
   .about-description {
     font-size: 1rem;
   }
+
+  .about-image img {
+    width: 80%;
+    max-width: 250px;
+  }
 }
+
+/* For smaller mobile screens (less than or equal to 480px) */
+@media (max-width: 480px) {
+  .about-container {
+    padding: 30px 10px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+  }
+
+  .about-image img {
+    width: 90%;
+    max-width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .about-container{
+    margin-left: 200px;
+  }
+  }

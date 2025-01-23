@@ -5,46 +5,37 @@ import Project from "./pages/Projects/Project";
 import TechStack from "./pages/TechStack/TechStack";
 import Experience from "./pages/Work-Experience/Experience";
 import ContactForm from "./pages/Contact/Contact";
-import Footer from "./pages/Footer/Footer";
+// import Footer from "./pages/Footer/Footer";
 import ScrollToTop from "react-scroll-to-top";
 import './index.css';
-import Loader from "./components/loader/Loader";
-import React, { useState, useEffect } from 'react';
+// import Loader from "./components/loader/Loader";
+// import React, { useState, useEffect } from 'react';
 // import "./App.css";
 // import Home from "./pages/home/Home";
 import { useTheme } from "./context/ThemeContext";
+import MobileNav from "./components/MobileNav/MobileNav";
+import { ToastContainer } from 'react-toastify';
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [theme]=useTheme()
-  useEffect(() => {
-    // Simulate a delay (e.g., fetching data)
-    setTimeout(() => setLoading(false), 3000);
-  }, []);
+ 
   return (
     <>
-     <div className="App">
-     {loading ? (
-        <Loader
-          type="Oval"
-          color="#00BFFF"
-          height={80}
-          width={80}
-        />
-      ) : (
-        <p>Content loaded!</p>
-      )}
-    </div>
+   
+    
     <div id={theme}>
+    <ToastContainer />
+      <MobileNav/>
       <Layout />
       <div className="main-wrapper">
         {/* <Home /> */}
         <About />
+        <Education />
         <TechStack />
         <Project />
-        <Education />
         <Experience />
         <ContactForm />
-        <Footer />
+        
         </div>
         <ScrollToTop
         smooth

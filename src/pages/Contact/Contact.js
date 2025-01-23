@@ -1,81 +1,121 @@
-import React, { useState } from 'react';
-import "./Contact.css"
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
+import "./Contact.css";
+import Rotate from "react-reveal/Rotate";
+import LightSpeed from "react-reveal/LightSpeed";
+import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
+const Contact = () => {
+  const [name, setname] = useState("");
+  const [email, setEmail] = useState("");
+  const [msg, setMsg] = useState("");
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
+  // //handle submit button
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission, e.g., send data to a server or API
-    console.log('Form submitted:', formData);
-
-    // Reset form after submission
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    try {
+      if (!name || !email || !msg) {
+        toast.error("PLease Provide all fields");
+      }
+      const res = await axios.post("/api/v1/portfolio/sendEmail", {
+        name,
+        email,
+        msg,
+      });
+      //validation success
+      if (res.data.success) {
+        toast.success(res.data.message);
+        setname("");
+        setEmail("");
+        setMsg("");
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <div className="contact-container" id='contact'>
-      <h2>Contact Us</h2>
-      <p>We’d love to hear from you! Please fill out the form below, and we’ll get in touch with you as soon as possible.</p>
+    <>
+      <div className=" contact" id="contact">
+        <div className="card card0 border-0">
+          <div className="row">
+            <div className="col-md-6 col-lg-6 col-xl-6 col-sm-12">
+              <div className="card1">
+                <div className="row border-line">
+                  <LightSpeed>
+                    <img
+                      src="https://img.freepik.com/free-photo/hot-line-contact-us-call-center-search-interface_53876-124009.jpg?w=2000"
+                      alt="ocontact"
+                      className="image"
+                    />
+                  </LightSpeed>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6">
+              <Rotate>
+                <div className="card2 d-flex card border-0 px-4 py-5">
+                  <div className="row">
+                    <div className="row">
+                      <h6>
+                        Contact With
+                        <BsLinkedin color="blue" size={30} className="ms-2" />
+                        <BsGithub color="black" size={30} className="ms-2" />
+                        <BsFacebook color="blue" size={30} className="ms-2" />
+                      </h6>
+                    </div>
 
-      <form onSubmit={handleSubmit} className="contact-form">
-        <label htmlFor="name">Full Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Your Name"
-          required
-        />
-
-        <label htmlFor="email">Email Address:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Your Email"
-          required
-        />
-
-        <label htmlFor="phone">Phone Number (Optional):</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="Your Phone Number"
-        />
-
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          rows="4"
-          placeholder="Your Message"
-          required
-        ></textarea>
-
-        <button type="submit" className="submit-btn">Submit</button>
-      </form>
-    </div>
+                    <div className="row px-3 mb-4">
+                      <div className="line" />
+                      <small className="or text-center">OR</small>
+                      <div className="line" />
+                    </div>
+                    <div className="row px-3">
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your Name"
+                        className="mb-3"
+                        value={name}
+                        onChange={(e) => setname(e.target.value)}
+                      />
+                    </div>
+                    <div className="row px-3">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter Your Email Address"
+                        className="mb-3"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <div className="row px-3">
+                      <textarea
+                        type="text"
+                        name="msg"
+                        placeholder="Write your message"
+                        className="mb-3"
+                        value={msg}
+                        onChange={(e) => setMsg(e.target.value)}
+                      />
+                    </div>
+                    <div className="row px-3">
+                      <button className="button" onClick={handleSubmit}  >
+                        SEND MESSAGE
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </Rotate>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default ContactForm;
+export default Contact;

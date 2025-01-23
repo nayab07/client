@@ -1,119 +1,178 @@
 /* Education.css */
 
-/* General container for the Education section */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Container for Education Section */
 .education-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
+  padding: 50px 20px;
+  background-color: #f4f4f9;
+}
+
+.education-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Timeline Container */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content {
+  padding: 10px;
+}
+
+.degree-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.institution {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.year {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Media Queries */
+
+/* Mobile Devices (max-width: 767px) */
+@media only screen and (max-width: 767px) {
   .education-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
-  
-  /* The timeline container */
+
   .education-timeline {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
+    gap: 20px;
   }
-  
-  /* Vertical line in the timeline */
-  .education-timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #ddd;
-    transform: translateX(-50%);
-  }
-  
-  /* Style for each timeline item */
+
   .timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-    padding-left: 40px; /* Space for the vertical line */
+    padding: 15px;
   }
-  
-  .timeline-item::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 10px;
-    height: 10px;
-    background-color: #3498db;
-    border-radius: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  
-  /* Content for each timeline item */
-  .timeline-content {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-left: 20px;
-    position: relative;
-    z-index: 0;
-  }
-  
-  /* Title of the degree or education */
+
   .degree-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
   }
-  
-  /* Institution name */
+
   .institution {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 5px;
+    font-size: 1rem;
   }
-  
-  /* Year of education */
+
+  .year {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet (768px to 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .education-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .education-timeline {
+    gap: 25px;
+  }
+
+  .timeline-item {
+    padding: 18px;
+  }
+
+  .degree-title {
+    font-size: 1.4rem;
+  }
+
+  .institution {
+    font-size: 1.1rem;
+  }
+
   .year {
     font-size: 1rem;
-    color: #888;
-    margin-bottom: 10px;
   }
-  
-  /* Description of the education experience */
+
   .description {
     font-size: 1rem;
-    color: #7f8c8d;
   }
-  
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .education-title {
-      font-size: 2rem;
-    }
-  
-    .degree-title {
-      font-size: 1.4rem;
-    }
-  
-    .institution {
-      font-size: 1rem;
-    }
-  
-    .year {
-      font-size: 0.9rem;
-    }
-  
-    .education-timeline {
-      max-width: 100%;
-      padding-left: 10px;
-    }
+}
+
+/* Laptop/Desktop (min-width: 1025px) */
+@media only screen and (min-width: 1025px) {
+  .education-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
-  
+
+  .education-timeline {
+    gap: 30px;
+  }
+
+  .timeline-item {
+    padding: 20px;
+  }
+
+  .degree-title {
+    font-size: 1.5rem;
+  }
+
+  .institution {
+    font-size: 1.2rem;
+  }
+
+  .year {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  /* Add 200px left margin for the education container on laptop size */
+  .education-container {
+    margin-left: 200px;
+  }
+}

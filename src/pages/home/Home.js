@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import Typewriter from "typewriter-effect";
 import resume from "../../../src/assets/docs/shams.pdf"
@@ -12,6 +13,10 @@ const Home = () => {
   const handleTheme = () => {
     setTheme((prevState) => (prevState === "light" ? "dark" : "light"));
   };
+  useEffect(() => {
+    document.body.classList.remove('light', 'dark');
+    document.body.classList.add(theme);
+  }, [theme]);
   return (
     <>
       <div className="container-fluid home-container" id="home">
@@ -22,6 +27,7 @@ const Home = () => {
             <BsFillSunFill size={30} />
           )}
         </div>
+        <div className="binding">
         <div className="container home-content">
           {/* <Fade right> */}
             <h2>Hi 👋 I'm a</h2>
@@ -54,6 +60,7 @@ const Home = () => {
               </a>
             </div>
           {/* </Fade> */}
+        </div>
         </div>
       </div>
     </>
