@@ -4,7 +4,7 @@ import Education from "./pages/Education/Education";
 import Project from "./pages/Projects/Project";
 import TechStack from "./pages/TechStack/TechStack";
 import Experience from "./pages/Work-Experience/Experience";
-import ContactForm from "./pages/Contact/Contact";
+import ContactUs from "./pages/Contact/ContactUs";
 // import Footer from "./pages/Footer/Footer";
 import ScrollToTop from "react-scroll-to-top";
 import './index.css';
@@ -34,7 +34,7 @@ function App() {
         <TechStack />
         <Project />
         <Experience />
-        <ContactForm />
+        <ContactUs/>
         
         </div>
         <ScrollToTop
