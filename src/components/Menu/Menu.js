@@ -34,7 +34,7 @@ const Menus = ({ toggle }) => {
                     spy={true}
                     smooth={true}
                     offset={-100}
-                    duration={100}
+                    duration={500}
                   >
                     <FcHome />
                     Home
@@ -46,7 +46,7 @@ const Menus = ({ toggle }) => {
                     spy={true}
                     smooth={true}
                     offset={-100}
-                    duration={100}
+                    duration={500}
                   >
                     <FcAbout />
                     About
@@ -58,7 +58,7 @@ const Menus = ({ toggle }) => {
                     spy={true}
                     smooth={true}
                     offset={-100}
-                    duration={100}
+                    duration={500}
                   >
                     <FcReadingEbook />
                     Education

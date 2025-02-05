@@ -5,44 +5,58 @@ import Project from "./pages/Projects/Project";
 import TechStack from "./pages/TechStack/TechStack";
 import Experience from "./pages/Work-Experience/Experience";
 import ContactUs from "./pages/Contact/ContactUs";
-// import Footer from "./pages/Footer/Footer";
 import ScrollToTop from "react-scroll-to-top";
-import './index.css';
-// import Loader from "./components/loader/Loader";
-// import React, { useState, useEffect } from 'react';
-// import "./App.css";
-// import Home from "./pages/home/Home";
+import "./index.css";
+import React, { useState, useEffect } from "react";
+import Loading from "./components/Loading/Loader";
 import { useTheme } from "./context/ThemeContext";
 import MobileNav from "./components/MobileNav/MobileNav";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
+
 function App() {
-  // const [loading, setLoading] = useState(true);
-  const [theme]=useTheme()
- 
+  const [theme] = useTheme();
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // simulate a 3-second delay
+  }, []);
+
   return (
     <>
-   
-    
-    <div id={theme}>
-    <ToastContainer />
-      <MobileNav/>
-      <Layout />
-      <div className="main-wrapper">
-        {/* <Home /> */}
-        <About />
-        <Education />
-        <TechStack />
-        <Project />
-        <Experience />
-        <ContactUs/>
-        
-        </div>
-        <ScrollToTop
-        smooth
-        color="#f29f67"
-        style={{ backgroundColor: "#1e1e2c", borderRadius: "80px" }}
-      />
-
+      <div className="app">
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div id={theme}>
+            <ToastContainer />
+            <MobileNav />
+            <Layout />
+            <div className="main-wrapper">
+              <About />
+              <Education />
+              <TechStack />
+              <Project />
+              <Experience />
+              <ContactUs />
+              <ScrollToTop
+                smooth
+                color="#f29f67"
+                style={{
+                  position: "fixed",
+                  bottom: "20px",
+                  right: "20px",
+                  zIndex: 9999, // Ensure it's on top
+                  backgroundColor: "#1e1e2c",
+                  borderRadius: "50%",
+                  padding: "10px",
+                }}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

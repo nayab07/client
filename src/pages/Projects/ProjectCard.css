@@ -1,151 +1,90 @@
-/* ProjectCard.css */
-
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
-/* Container for each Project Card */
+/* Container for the project card */
 .project-card {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 20px;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Project Image */
-.project-image {
-  width: 100%;
+  background-color: #1c1c1c; /* Dark background for the card */
+  color: #f5f5f5; /* Light text color */
+  width: 250px; /* Small width for mobile */
   height: auto;
-  object-fit: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  margin: 20px;
+  cursor: pointer;
 }
 
-/* Project Info Section */
+/* On hover, add shadow and transform */
+.project-card:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow effect */
+}
+
+/* Image styling */
+.project-image {
+  width: 100%; /* Full width */
+  height: 150px; /* Fixed height for image */
+  object-fit: cover; /* Ensure image doesn't stretch */
+  border-bottom: 2px solid #3498db; /* Bottom border to separate the image */
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Project information section */
 .project-info {
-  padding: 20px;
+  padding: 15px;
+  text-align: center;
 }
 
-/* Project Title */
 .project-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 1.3rem;
+  color: #3498db; /* Blue color for the title */
+  font-weight: 600;
   margin-bottom: 10px;
+  transition: color 0.3s ease; /* Smooth color change on hover */
 }
 
-/* Project Description */
+.project-card:hover .project-title {
+  color: #2980b9; /* Slightly darker blue on hover */
+}
+
 .project-description {
   font-size: 1rem;
-  color: #555;
+  color: #bbb;
   margin-bottom: 15px;
-  line-height: 1.6;
+  line-height: 1.4;
+  height: 50px;
+  overflow: hidden; /* Limit the text visibility */
 }
 
-/* Project Links Section */
+/* Project links section */
 .project-links {
-  display: flex;
-  justify-content: flex-start;
+  margin-top: 10px;
 }
 
-/* Link Styling */
 .project-link {
   font-size: 1rem;
-  color: #007bff;
+  color: #3498db; /* Blue color for the link */
   text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #007bff;
-  transition: background-color 0.3s, color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .project-link:hover {
-  background-color: #007bff;
-  color: #fff;
+  color: #2980b9; /* Darker blue for hover effect */
 }
 
-/* Media Queries */
-
-/* Mobile Devices (max-width: 767px) */
-@media only screen and (max-width: 767px) {
+/* Larger screen (laptop and up) styling */
+@media (min-width: 1024px) {
   .project-card {
-    margin: 15px;
+    width: 300px; /* Increase card width for larger screens */
+    margin: 20px; /* Maintain consistent margin */
   }
 
-  .project-title {
-    font-size: 1.5rem;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-  }
-
-  .project-link {
-    font-size: 0.9rem;
-    padding: 4px 8px;
-  }
-}
-
-/* Tablet (768px to 1024px) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .project-card {
-    margin: 20px;
-  }
-
-  .project-title {
-    font-size: 1.7rem;
-  }
-
-  .project-description {
-    font-size: 1rem;
-  }
-
-  .project-link {
-    font-size: 1rem;
-    padding: 5px 10px;
-  }
-}
-
-/* Laptop/Desktop (min-width: 1025px) */
-@media only screen and (min-width: 1025px) {
-  .project-card {
-    flex-direction: row; /* Display the card content in a row layout for larger screens */
-    margin: 30px;
-  }
-
-  .project-info {
-    padding: 30px;
-    width: 50%; /* Adjust width for the info section */
-  }
-
-  .project-image {
-    width: 50%; /* Image will take up 50% of the card width */
-  }
-
-  .project-title {
-    font-size: 2rem;
-  }
-
-  .project-description {
-    font-size: 1.1rem;
-  }
-
-  .project-link {
-    font-size: 1.1rem;
-    padding: 6px 12px;
+  /* Layout for multiple project cards */
+  .project-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 30px; /* Space between cards */
   }
 }

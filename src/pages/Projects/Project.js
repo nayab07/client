@@ -5,7 +5,7 @@ import "./Project.css" // Import the CSS for styling the entire Projects section
 const Projects = () => {
   const projectData = [
     {
-      title: 'Project One',
+      title: 'About country ',
       description: 'The World Project is a dynamic and interactive web application that allows users to explore global data like  population, region, capital',
       image: 'https://web-static.wrike.com/blog/content/uploads/2020/03/Global-Project-Management.jpg?av=15ec480845adf18b79dea8f75a80bd72', // Change to actual project image paths
       githubLink: 'https://github.com/nayab07/world-project',
@@ -21,7 +21,14 @@ const Projects = () => {
       title: 'Tinder-Clone',
       description: 'A Node.js backend with RESTful API and MongoDB database integration.',
       image: 'https://thesynergyworks.com/wp-content/uploads/2023/05/Build-tinder-clone.png', // Change to actual project image paths
-      githubLink: 'https://github.com/nayab07/Tinder-web-frontend',
+      githubLink: "https://github.com/nayab07/MyTinder-web",
+    },
+    {
+      title: 'My-Portfolio',
+      description: 'Mern stack used project ',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMFCMKGl0RwXfnEYJn-x_hAerMAHSrtyjBxg&s', // Change to actual project image paths
+      githubLink: 'https://github.com/nayab07/client',
+      
     },
   ];
 

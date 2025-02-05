@@ -1,71 +1,90 @@
-/* About.css */
-
-/* General Styles */
+/* General container */
 .about-container {
+  background-color: #121212; /* Dark background */
+  color: #f5f5f5; /* Light text */
+  padding: 50px 20px;
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 1200px;
+  /* margin: 0 auto; */
+  margin-left: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* About section content */
+.about-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 20px;
-  background-color: var(--background-color);
+  flex-direction: column;
+  max-width: 100%;
 }
 
-.about-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  gap: 20px;
-}
-
-.about-text {
-  flex: 1;
-  text-align: left;
-}
-
+/* About title */
 .about-title {
   font-size: 2.5rem;
-  font-weight: bold;
+  color: #3498db; /* Blue color for the title */
   margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  transition: all 0.3s ease;
 }
 
+/* Underline animation for title */
+.about-title::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #3498db;
+  bottom: 0;
+  left: 25%;
+  transition: width 0.3s ease;
+}
+
+.about-title:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* About description */
 .about-description {
   font-size: 1.2rem;
   line-height: 1.6;
-  margin-bottom: 15px;
-  color: var(--text-color);
+  margin-bottom: 20px;
+  color: #ccc; /* Subtle light text for description */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
 }
 
-.about-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  border-radius: 90px;
+/* Keyframe animation for fade-in effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.about-image img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
-}
-
-/* Media Queries for Mobile Responsiveness */
-
-/* For screens less than or equal to 768px (tablets and mobile devices) */
+/* Responsive styling for smaller screens */
 @media (max-width: 768px) {
   .about-container {
-    padding: 40px 20px;
-  }
-
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .about-text {
-    text-align: center;
+    padding: 30px 15px;
+    margin: 20px auto;
   }
 
   .about-title {
@@ -73,37 +92,6 @@
   }
 
   .about-description {
-    font-size: 1rem;
-  }
-
-  .about-image img {
-    width: 80%;
-    max-width: 250px;
+    font-size: 1.1rem;
   }
 }
-
-/* For smaller mobile screens (less than or equal to 480px) */
-@media (max-width: 480px) {
-  .about-container {
-    padding: 30px 10px;
-  }
-
-  .about-title {
-    font-size: 1.8rem;
-  }
-
-  .about-description {
-    font-size: 0.95rem;
-  }
-
-  .about-image img {
-    width: 90%;
-    max-width: 200px;
-  }
-}
-
-@media only screen and (min-width: 1025px) {
-  .about-container{
-    margin-left: 200px;
-  }
-  }

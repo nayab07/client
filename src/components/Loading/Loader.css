@@ -1,0 +1,61 @@
+/* Loader.css */
+
+/* Styling the loading container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: relative;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Spinner styling */
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue color */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.5s linear infinite;
+  margin-bottom: 20px;
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading text styling */
+.loading-text {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeIn 1.5s ease-out infinite;
+}
+
+/* FadeIn animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Styling the name text */
+.name-text {
+  font-size: 24px;
+  color: #3498db;
+  font-weight: 600;
+  animation: bounce 2s infinite ease-in-out;
+  letter-spacing: 2px;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
